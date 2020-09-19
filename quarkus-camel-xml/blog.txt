@@ -1,0 +1,117 @@
+chandrashekhar@localhost quarkus-camel-xml]$ ps -eo pid,rss,command|grep camel
+  10745 37020 ./target/quarkus-camel-xml-1.0.0-SNAPSHOT-runner
+
+[chandrashekhar@localhost spring-boot-camel-master]$ sudo alternatives --config java
+[sudo] password for chandrashekhar: 
+
+There are 2 programs which provide 'java'.
+
+  Selection    Command
+-----------------------------------------------
+ + 1           java-11-openjdk.x86_64 (/usr/lib/jvm/java-11-openjdk-11.0.7.10-1.fc32.x86_64/bin/java)
+*  2           java-1.8.0-openjdk.x86_64 (/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-1.fc32.x86_64/jre/bin/java)
+
+Enter to keep the current selection[+], or type selection number: 1
+[chandrashekhar@localhost spring-boot-camel-master]$ 
+
+
+[chandrashekhar@localhost quarkus-camel-xml]$ ./target/quarkus-camel-xml-1.0.0-SNAPSHOT-runner 
+__  ____  __  _____   ___  __ ____  ______ 
+ --/ __ \/ / / / _ | / _ \/ //_/ / / / __/ 
+ -/ /_/ / /_/ / __ |/ , _/ ,< / /_/ /\ \   
+--\___\_\____/_/ |_/_/|_/_/|_|\____/___/   
+2020-09-08 17:43:50,799 INFO  [org.apa.cam.qua.cor.CamelBootstrapRecorder] (main) bootstrap runtime: org.apache.camel.quarkus.main.CamelMainRuntime
+2020-09-08 17:43:50,801 INFO  [org.apa.cam.mai.BaseMainSupport] (main) Auto-configuration summary:
+2020-09-08 17:43:50,801 INFO  [org.apa.cam.mai.BaseMainSupport] (main) 	camel.main.xmlRoutes=file:src/main/resources/camel-route.xml
+2020-09-08 17:43:50,801 INFO  [org.apa.cam.mai.BaseMainSupport] (main) 	camel.context.name=camel-quarkus-xml-poc
+2020-09-08 17:43:50,801 INFO  [org.apa.cam.qua.mai.CamelMainRoutesCollector] (main) Loading additional Camel XML routes from: file:src/main/resources/camel-route.xml
+2020-09-08 17:43:50,802 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (main) Apache Camel 3.4.2 (camel-quarkus-xml-poc) is starting
+2020-09-08 17:43:50,803 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (main) StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2020-09-08 17:43:50,803 INFO  [org.apa.cam.imp.eng.InternalRouteStartupManager] (main) Route: camel-xml-quarkus started and consuming from: timer://foo
+2020-09-08 17:43:50,803 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (main) Total 1 routes, of which 1 are started
+2020-09-08 17:43:50,803 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (main) Apache Camel 3.4.2 (camel-quarkus-xml-poc) started in 0.000 seconds
+2020-09-08 17:43:50,806 INFO  [io.quarkus] (main) quarkus-camel-xml 1.0.0-SNAPSHOT native (powered by Quarkus 1.7.2.Final) started in 0.020s. Listening on: http://0.0.0.0:8080
+2020-09-08 17:43:50,806 INFO  [io.quarkus] (main) Profile prod activated. 
+2020-09-08 17:43:50,806 INFO  [io.quarkus] (main) Installed features: [camel-core, camel-file, camel-log, camel-main, camel-support-common, camel-timer, camel-xml-io, cdi, resteasy]
+2020-09-08 17:43:51,803 INFO  [camel-xml-quarkus] (Camel (camel-quarkus-xml-poc) thread #0 - timer://foo) Hello ALL
+2020-09-08 17:44:01,804 INFO  [camel-xml-quarkus] (Camel (camel-quarkus-xml-poc) thread #0 - timer://foo) Hello ALL
+
+[chandrashekhar@localhost quarkus-camel-xml]$ java -jar target/quarkus-camel-xml-1.0.0-SNAPSHOT-runner.jar 
+__  ____  __  _____   ___  __ ____  ______ 
+ --/ __ \/ / / / _ | / _ \/ //_/ / / / __/ 
+ -/ /_/ / /_/ / __ |/ , _/ ,< / /_/ /\ \   
+--\___\_\____/_/ |_/_/|_/_/|_|\____/___/   
+2020-09-08 17:52:08,319 INFO  [org.apa.cam.qua.cor.CamelBootstrapRecorder] (main) bootstrap runtime: org.apache.camel.quarkus.main.CamelMainRuntime
+2020-09-08 17:52:08,443 INFO  [org.apa.cam.mai.BaseMainSupport] (main) Auto-configuration summary:
+2020-09-08 17:52:08,444 INFO  [org.apa.cam.mai.BaseMainSupport] (main) 	camel.main.xmlRoutes=file:src/main/resources/camel-route.xml
+2020-09-08 17:52:08,445 INFO  [org.apa.cam.mai.BaseMainSupport] (main) 	camel.context.name=camel-quarkus-xml-poc
+2020-09-08 17:52:08,450 INFO  [org.apa.cam.qua.mai.CamelMainRoutesCollector] (main) Loading additional Camel XML routes from: file:src/main/resources/camel-route.xml
+2020-09-08 17:52:08,725 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (main) Apache Camel 3.4.2 (camel-quarkus-xml-poc) is starting
+2020-09-08 17:52:08,728 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (main) StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2020-09-08 17:52:08,737 INFO  [org.apa.cam.imp.eng.InternalRouteStartupManager] (main) Route: camel-xml-quarkus started and consuming from: timer://foo
+2020-09-08 17:52:08,747 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (main) Total 1 routes, of which 1 are started
+2020-09-08 17:52:08,748 INFO  [org.apa.cam.imp.eng.AbstractCamelContext] (main) Apache Camel 3.4.2 (camel-quarkus-xml-poc) started in 0.023 seconds
+2020-09-08 17:52:09,020 INFO  [io.quarkus] (main) quarkus-camel-xml 1.0.0-SNAPSHOT on JVM (powered by Quarkus 1.7.2.Final) started in 2.463s. Listening on: http://0.0.0.0:8080
+2020-09-08 17:52:09,021 INFO  [io.quarkus] (main) Profile prod activated. 
+2020-09-08 17:52:09,022 INFO  [io.quarkus] (main) Installed features: [camel-core, camel-file, camel-log, camel-main, camel-support-common, camel-timer, camel-xml-io, cdi, resteasy]
+2020-09-08 17:52:09,759 INFO  [camel-xml-quarkus] (Camel (camel-quarkus-xml-poc) thread #0 - timer://foo) Hello ALL
+2020-09-08 17:52:19,746 INFO  [camel-xml-quarkus] (Camel (camel-quarkus-xml-poc) thread #0 - timer://foo) Hello ALL
+
+
+
+chandrashekhar@localhost spring-boot-camel-master]$ ps -eo pid,rss,command|grep camel
+  13123 619312 java -jar target/spring-boot-camel-1.0-SNAPSHOT.jar
+
+[chandrashekhar@localhost spring-boot-camel-master]$ java -jar target/spring-boot-camel-1.0-SNAPSHOT.jar 
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.5.4.RELEASE)
+
+22:48:22.472 [main] INFO  o.s.b.c.e.u.UndertowEmbeddedServletContainer - Undertow started on port(s) 8081 (http)
+22:48:22.477 [main] INFO  o.s.c.s.DefaultLifecycleProcessor - Starting beans in phase 0
+22:48:22.489 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter - Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+22:48:22.580 [main] INFO  o.a.c.spring.boot.RoutesCollector - Loading additional Camel XML routes from: classpath:camel/*.xml
+22:48:22.581 [main] INFO  o.a.c.spring.boot.RoutesCollector - Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+22:48:22.582 [main] INFO  o.a.camel.spring.SpringCamelContext - Apache Camel 2.19.1 (CamelContext: MyCamel) is starting
+22:48:22.583 [main] INFO  o.a.c.m.ManagedManagementStrategy - JMX is enabled
+22:48:22.703 [main] INFO  o.a.c.i.DefaultRuntimeEndpointRegistry - Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)
+22:48:22.815 [main] INFO  o.a.camel.spring.SpringCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+22:48:22.855 [main] INFO  o.a.camel.spring.SpringCamelContext - Route: route1 started and consuming from: timer://foo?period=5000
+22:48:22.857 [main] INFO  o.a.camel.spring.SpringCamelContext - Total 1 routes, of which 1 are started.
+22:48:22.859 [main] INFO  o.a.camel.spring.SpringCamelContext - Apache Camel 2.19.1 (CamelContext: MyCamel) started in 0.276 seconds
+22:48:22.863 [main] INFO  o.s.b.c.e.u.UndertowEmbeddedServletContainer - Undertow started on port(s) 8080 (http)
+22:48:22.868 [main] INFO  i.f.quickstarts.camel.Application - Started Application in 6.426 seconds (JVM running for 7.359)
+22:48:23.876 [Camel (MyCamel) thread #0 - timer://foo] INFO  route1 - >>> Hello World
+22:48:28.864 [Camel (MyCamel) thread #0 - timer://foo] INFO  route1 - >>> Hello World
+22:48:33.859 [Camel (MyCamel) thread #0 - timer://foo] INFO  route1 - >>> Hello World
+
+
+Minikube:
+[chandrashekhar@localhost quarkus-camel-xml]$ minikube start -p quarkus --cpus=2 --memory='5g'
+[chandrashekhar@localhost quarkus-camel-xml]$ eval $(minikube -p quarkus docker-env)
+[chandrashekhar@localhost quarkus-camel-xml]$ minikube service list -p quarkus
+|-------------|-------------------|--------------|-----------------------------|
+|  NAMESPACE  |       NAME        | TARGET PORT  |             URL             |
+|-------------|-------------------|--------------|-----------------------------|
+| default     | kubernetes        | No node port |
+| default     | quarkus-camel-xml | http/8080    | http://192.168.39.159:30815 |
+| kube-system | kube-dns          | No node port |
+|-------------|-------------------|--------------|-----------------------------|
+
+<dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-minikube</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-container-image-jib</artifactId>
+    </dependency>
+
+
+[chandrashekhar@localhost quarkus-camel-xml]$ ./mvnw clean package -Dquarkus.kubernetes.deploy=true
+
